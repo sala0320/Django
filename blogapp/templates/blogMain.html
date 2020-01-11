@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+
+    {% for blog in blogs %}
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h3>제목 : {{ blog.title }}</h3>
+                <br>
+                <h5>작성일 : {{ blog.pub_date }}</h5>
+                <br>
+                <h5>작성자 : {{ blog.author }}</h5>
+                <br>
+
+                <a class="btn btn-lg btn-primary"
+                   href="{% url 'detail' blog.id %}"
+                   role="button"> 목차로 </a>
+
+            </div>
+        </main>
+    {% endfor %}
+
+{% endblock %}
